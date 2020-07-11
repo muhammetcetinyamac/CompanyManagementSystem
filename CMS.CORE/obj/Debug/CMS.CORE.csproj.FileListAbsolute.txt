@@ -1,0 +1,11 @@
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.CORE\bin\Debug\CMS.CORE.dll.config
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.CORE\bin\Debug\CMS.CORE.dll
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.CORE\bin\Debug\CMS.CORE.pdb
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.CORE\bin\Debug\EntityFramework.dll
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.CORE\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.CORE\bin\Debug\EntityFramework.xml
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.CORE\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.CORE\obj\Debug\CMS.CORE.csprojAssemblyReference.cache
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.CORE\obj\Debug\CMS.CORE.csproj.CopyComplete
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.CORE\obj\Debug\CMS.CORE.dll
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.CORE\obj\Debug\CMS.CORE.pdb

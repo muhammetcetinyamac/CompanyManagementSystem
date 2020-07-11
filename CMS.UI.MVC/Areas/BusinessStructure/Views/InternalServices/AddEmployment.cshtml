@@ -1,0 +1,58 @@
+﻿@model List<CMS.MODEL.Entities.Employees>
+@{
+    ViewBag.Title = "Employment";
+    Layout = "~/Areas/BusinessStructure/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="col-md-12">
+        <h2>İç Hizmetler</h2>
+
+        <div class="m-portlet m-portlet--tab">
+
+            <div class="m-portlet__head">
+                <div class="m-portlet__head-caption">
+                    <div class="m-portlet__head-title">
+                        <span class="m-portlet__head-icon m--hide">
+                            <i class="la la-gear"></i>
+                        </span>
+                        <h3 class="m-portlet__head-text">
+                            Görevlendirme
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            @using (Html.BeginForm("AddEmployment", "InternalServices", FormMethod.Post))
+            {
+                <form class="m-form m-form--fit m-form--label-align-right">
+                    <div class="m-portlet__body">
+
+                        <div class="form-group m-form__group">
+                            <label for="exampleSelect1">Personel</label>
+                            <select class="form-control m-input" name="EmployeesId">
+                                @foreach (var item in Model)
+                                {
+                                    <option value="@item.Id">@item.TCKN @item.FirstName @item.LastName</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="form-group m-form__group">
+                            <label>Görev Adı</label>
+                            <input type="text" class="form-control m-input" name="TaskName" required>
+                        </div>
+                        <div class="form-group m-form__group">
+                            <label for="exampleTextarea">Görev Açıklaması</label>
+                            <textarea class="form-control m-input" name="JobDescription" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="m-portlet__foot m-portlet__foot--fit">
+                        <div class="m-form__actions">
+                            <button type="submit" class="btn btn-primary">Ekle</button>
+                        </div>
+                    </div>
+                </form>
+            }
+            </div>
+
+
+    </div>
+

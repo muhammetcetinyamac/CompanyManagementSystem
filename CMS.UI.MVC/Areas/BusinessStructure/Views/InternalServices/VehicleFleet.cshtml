@@ -1,0 +1,52 @@
+﻿@model List<CMS.MODEL.Entities.VehicleFleet>
+@{
+    ViewBag.Title = "VehicleFleet";
+    Layout = "~/Areas/BusinessStructure/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="col-md-12">
+        <h2>İç Hizmetler</h2>
+        <!--Begin::Portlet-->
+        <div class="m-portlet m-portlet--full-height  m-portlet--unair">
+            <div class="m-portlet__head">
+                <div class="m-portlet__head-caption">
+                    <div class="m-portlet__head-title">
+                        <h3 class="m-portlet__head-text">
+                            Araç Filosu
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="m-portlet__body">
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Tip</th>
+                            <th>Model</th>
+                            <th>Marka</th>
+                            <th>Konum</th>
+                            <th>Sahibi</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <th>@item.Type</th>
+                            <th>@item.Model</th>
+                            <th>@item.Brand</th>
+                            <th>@item.Location</th>
+                            <th>@item.Employees.FirstName @item.Employees.LastName</th>
+                            <th>Sahibi</th>
+                            <th><a href="@Url.Action("UpdateVehicle","InternalServices" , new { Id = item.Id })" name="@item.Id" class="btn m-btn--pill m-btn--air m-btn m-btn--gradient-from-primary m-btn--gradient-to-info">Güncelle</a> <a href="@Url.Action("DeleteVehicle","InternalServices" , new { Id = item.Id })" name="@item.Id" class="btn m-btn--pill m-btn--air m-btn m-btn--gradient-from-danger m-btn--gradient-to-warning">Sil</a></th>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>

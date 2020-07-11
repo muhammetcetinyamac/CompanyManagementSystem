@@ -1,0 +1,73 @@
+﻿@model List<CMS.MODEL.Entities.Product>
+@{
+    ViewBag.Title = "Product";
+    Layout = "~/Areas/BusinessStructure/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-12">
+    <h2>Ar-Ge</h2>
+    <!--Begin::Portlet-->
+    <div class="m-portlet m-portlet--full-height  m-portlet--unair">
+        <div class="m-portlet__head">
+            <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                    <h3 class="m-portlet__head-text">
+                        Ürünler
+                    </h3>
+                </div>
+            </div>
+        </div>
+       
+        <div class="m-portlet__body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Resim</th>
+                        <th>Kategori</th>
+                        <th>Ürün Adı</th>
+                        <th>Açıklama</th>
+                        <th>Ürün Ölçüsü</th>
+                        <th>Birim Fiyatı</th>
+                        <th>Durumu</th>
+                        <th>İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <th>Resim</th>
+                        <th>@item.Category.CategoryName</th>
+                        <th>@item.ProductName</th>
+                        <th>@item.Description</th>
+                        <th>@item.Height x @item.Width</th>
+                        <th>@item.Price</th>
+                        <th>
+                            @if (item.IsActive)
+                            {
+                                <span class="m-badge m-badge--success m-badge--wide">Üretimde</span>
+                            }
+                            else
+                            {
+                                <span class="m-badge m-badge--info m-badge--wide">Üretimden Kalktı</span>
+                            }
+                        </th>                       
+                        <th>
+                            <a href="@Url.Action("ViewProduct","ResearchDevelopment" , new { Id = item.Id })" name="@item.Id" class="btn btn-outline-brand active">İncele</a>
+                            <a href="@Url.Action("UpdateProduct","ResearchDevelopment" , new { Id = item.Id })" name="@item.Id" class="btn btn-outline-primary active">Güncelle</a>
+                            <a href="@Url.Action("DeleteProduct","ResearchDevelopment" , new { Id = item.Id })" name="@item.Id" class="btn btn-outline-danger active">Sil</a>
+                        </th>
+
+
+                    </tr>
+                    }
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,34 @@
+﻿@model List<CMS.MODEL.Entities.Announcement>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Duyuru Panosu</title>
+</head>
+<body>
+    <section class="timeline">
+        <div class="container">
+            @foreach (var item in Model)
+            {         
+                    <div class="timeline-item">
+                        <div class="timeline-img"></div>
+                        <div class="timeline-content js--fadeInLeft">
+                            <h2>@item.Employees.FirstName @item.Employees.LastName - @item.Employees.Title </h2>
+                            <div class="date">@item.CreatedDate</div>
+                            <p>@item.Content</p>
+                        </div>
+                    </div>                                  
+            }
+
+            <link href="~/Content/Duyuru/duyuru.css" rel="stylesheet" />
+            <script src="~/Content/Duyuru/duyuru.js"></script>
+        </div>
+    </section>
+</body>
+</html>
+

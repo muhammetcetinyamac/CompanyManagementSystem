@@ -1,0 +1,86 @@
+﻿@model List<CMS.MODEL.Entities.Tasks>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/BusinessStructure/Views/Shared/_Layout.cshtml";
+}
+
+            <div class="col-lg-12">
+                <!--begin::Portlet-->
+                <div class="m-portlet">
+                    <div class="m-portlet__head">
+                        <div class="m-portlet__head-caption">
+                            <div class="m-portlet__head-title">
+                                <h3 class="m-portlet__head-text">
+                                    Görevler
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="m-portlet__body">
+                       <!--begin::Section-->
+                        <div class="m-section">
+                           <div class="m-section__content">
+                                <table class="table">
+                                    <thead>
+                                        <tr>                                          
+                                            <th>Görev Adı</th>
+                                            <th>Görevi Veren</th>
+                                            <th>İçerik</th>
+                                            <th>Tarih</th>
+                                            <th>Durum</th>
+                                            <th>İşlem</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                        <tr>
+                                            @if (item.EmployeesId != 0)
+                                            {                                           
+                                            <th>@item.CommissionedBy</th>
+                                            <th>@item.TaskName</th>
+                                            <th>@item.JobDescription</th>
+                                            <th>@item.CreatedDate</th>
+                                            <th>
+                                                @{
+                                                    if ((int)item.Confirmation == 2)
+                                                    {
+                                                        <span class="m-badge m-badge--success m-badge--wide">Görev Tamamlandı</span>
+                                                    }
+                                                    else if ((int)item.Confirmation == 1)
+                                                    {
+                                                        <span class="m-badge m-badge--info m-badge--wide">Devam Ediyor</span>
+                                                    }
+                                                    else if ((int)item.Confirmation == 7)
+                                                    {
+                                                        <span class="m-badge m-badge--danger m-badge--wide">Görev Reddedildi</span>
+                                                    }
+                                                }
+                                            </th>
+                                            <th>
+                                                @{if (item.IsActive == true)
+                                                    {
+                                                        <a href="@Url.Action("MissionCompleted","Task" , new { Id = item.Id })" name="@item.Id" class="btn m-btn--pill m-btn--air m-btn m-btn--gradient-from-primary m-btn--gradient-to-info">Görevi Tamamla</a> <a href="@Url.Action("MissionFailed","Task" , new { Id = item.Id })" name="@item.Id" class="btn m-btn--pill m-btn--air m-btn m-btn--gradient-from-danger m-btn--gradient-to-warning">Reddet</a>
+                                                    }                                                  
+                                                }
+                                            </th>
+                                            }
+                                        </tr>
+                                        }                                     
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!--end::Section-->
+                        <!--begin::Section-->
+                        <!--end::Section-->
+                    </div>
+
+                    <!--end::Form-->
+                </div>
+
+                <!--end::Portlet-->
+
+            </div>
+

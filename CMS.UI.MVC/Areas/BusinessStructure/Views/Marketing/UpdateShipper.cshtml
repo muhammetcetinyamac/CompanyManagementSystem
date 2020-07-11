@@ -1,0 +1,52 @@
+﻿@model CMS.MODEL.Entities.Shippers
+@{
+    ViewBag.Title = "UpdateShipper";
+    Layout = "~/Areas/BusinessStructure/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="col-md-12">
+        <h2>Pazarlama</h2>
+
+        <div class="m-portlet m-portlet--tab">
+
+            <div class="m-portlet__head">
+                <div class="m-portlet__head-caption">
+                    <div class="m-portlet__head-title">
+                        <span class="m-portlet__head-icon m--hide">
+                            <i class="la la-gear"></i>
+                        </span>
+                        <h3 class="m-portlet__head-text">
+                            Taşıyıcı Güncelle
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            @using (Html.BeginForm("UpdateShipper", "Marketing", FormMethod.Post))
+            {
+                <form class="m-form m-form--fit m-form--label-align-right">
+                    <div class="m-portlet__body">
+                        <div class="form-group m-form__group">
+                            <label>Şirket Adı</label>
+                            <input type="text" class="form-control m-input" name="CompanyName" value="@Model.CompanyName" required>
+                        </div>
+                        <div class="form-group m-form__group">
+                            <label>Telefon</label>
+                            <input type="number" class="form-control m-input" name="Phone" value="@Model.Phone" required>
+                        </div>
+                        <div class="form-group m-form__group">
+                            <label>Adres</label>
+                            <input type="text" class="form-control m-input" name="Address" value="@Model.Address">
+                        </div>
+                        <div class="m-portlet__foot m-portlet__foot--fit">
+                            <div class="m-form__actions">
+                                <button type="submit" class="btn btn-success">Güncelle</button>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </form>
+            }
+        </div>
+
+
+    </div>

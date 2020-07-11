@@ -1,0 +1,11 @@
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.MODEL\bin\Debug\CMS.MODEL.dll
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.MODEL\bin\Debug\CMS.MODEL.pdb
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.MODEL\bin\Debug\CMS.CORE.dll
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.MODEL\bin\Debug\EntityFramework.dll
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.MODEL\bin\Debug\CMS.CORE.pdb
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.MODEL\bin\Debug\CMS.CORE.dll.config
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.MODEL\bin\Debug\EntityFramework.xml
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.MODEL\obj\Debug\CMS.MODEL.csprojAssemblyReference.cache
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.MODEL\obj\Debug\CMS.MODEL.csproj.CopyComplete
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.MODEL\obj\Debug\CMS.MODEL.dll
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.MODEL\obj\Debug\CMS.MODEL.pdb

@@ -1,0 +1,119 @@
+﻿@model CMS.MODEL.Entities.Employees
+
+@{
+    ViewBag.Title = "AddStaff";
+    Layout = "~/Areas/BusinessStructure/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-12">
+    <h2>İnsan Kaynakları</h2>
+
+    <div class="m-portlet m-portlet--tab">
+        <div class="m-demo__preview m-demo__preview--btn">
+            <a href="@Url.Action("AddStaff","HR")" class="btn btn-success btn-lg m-btn 	m-btn m-btn--icon m-btn--pill">
+                <span>
+                    <i class="fa fa-archive"></i>
+                    <span>Personel Ekle</span>
+                </span>
+            </a>
+        </div>
+        <div class="m-portlet__head">
+            <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                    <span class="m-portlet__head-icon m--hide">
+                        <i class="la la-gear"></i>
+                    </span>
+                    <h3 class="m-portlet__head-text">
+                        Personel Güncelle
+                    </h3>
+                </div>
+            </div>
+        </div>
+        @using (Html.BeginForm("AddStaff", "HR", FormMethod.Post))
+        {
+            <form class="m-form m-form--fit m-form--label-align-right">
+                <div class="m-portlet__body">
+                    <div class="form-group m-form__group">
+                        <label>Tc Kimlik No</label>
+                        <input type="text" class="form-control m-input" name="TCKN">
+                    </div>
+                    <div class="form-group m-form__group">
+                        <label>Adı</label>
+                        <input type="text" class="form-control m-input" name="FirstName">
+                    </div>
+                    <div class="form-group m-form__group">
+                        <label>Soyadı</label>
+                        <input type="text" class="form-control m-input" name="LastName">
+                    </div>
+                    <div class="form-group m-form__group">
+                        <label>Adres</label>
+                        <input type="text" class="form-control m-input" name="Address">
+                    </div>
+                    <div class="form-group m-form__group">
+                        <label>Telefonu</label>
+                        <input type="text" class="form-control m-input" name="Phone">
+                    </div>
+                    <div class="form-group m-form__group">
+                        <label>EMail</label>
+                        <input type="text" class="form-control m-input" name="EMail">
+                    </div>
+
+                    <div class="form-group m-form__group">
+                        <label for="exampleSelect1">Departman</label>
+                        <select class="form-control m-input" name="Department">
+                            @foreach (var item in ViewBag.Dn)
+                            {                                
+                                    <option value="@item">@item</option>                                                                
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group m-form__group">
+                        <label for="exampleSelect1">Ünvan</label>
+                        <select class="form-control m-input" name="Title">
+                            @foreach (var item in ViewBag.Tn)
+                            {
+                                <option value="@item">@item</option>
+
+                            }
+                        </select>
+                    </div>                   
+                    <div class="form-group m-form__group">
+                        <label for="exampleSelect1">Departman</label>
+                        <select class="form-control m-input" name="Gender">
+                            <option value="Kadın">Kadın</option>
+                            <option value="Erkek">Erkek</option>
+                        </select>
+                    </div>
+                    <div class="form-group m-form__group">
+                        <label>Doğum Tarihi</label>
+                        <input class="form-control m-input" name="BirthDate" type="date" id="example-date-input">
+                    </div>
+                    <div class="form-group m-form__group">
+                        <label>işe Giriş Tarihi</label>
+                        <input class="form-control m-input" name="HireDate" type="date" id="example-date-input">
+                    </div>
+                    <div class="form-group m-form__group">
+                        <label>Ücreti</label>
+                        <input type="text" class="form-control m-input" name="Price">
+                    </div>
+                    <div class="form-group m-form__group">
+                        <label>Personel Hakkında</label>
+                        <input type="text" class="form-control m-input" name="Notes">
+                    </div>
+                    <div class="form-group m-form__group">
+                        <label>Personel Şifresi</label>
+                        <input type="text" class="form-control m-input" name="Password">
+                    </div>
+                    <div class="m-portlet__foot m-portlet__foot--fit">
+                        <div class="m-form__actions">
+                            <button type="submit" class="btn btn-success">Ekle</button>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        }
+    </div>
+
+
+</div>

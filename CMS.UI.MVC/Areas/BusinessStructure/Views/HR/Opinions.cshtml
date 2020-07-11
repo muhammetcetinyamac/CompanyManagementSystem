@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewBag.Title = "Opinions";
+    Layout = "~/Areas/BusinessStructure/Views/Shared/_Layout.cshtml";
+}
+<div class="col-xl-12">
+    <!--begin::Portlet-->
+    <div class="m-portlet">
+        <div class="m-portlet__head">
+            <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                    <h3 class="m-portlet__head-text">
+                        Aylık Personel Görüşleri
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="m-portlet__body">
+
+            <!--begin::Section-->
+            <div class="m-section">
+
+                <div class="m-section__content">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Tarih</th>
+                                <th>Kötü</th>
+                                <th>Normal</th>
+                                <th>İyi</th>
+                                <th>Ortalama</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>@DateTime.Now</th>
+                                <th>@ViewBag.Kotu</th>
+                                <th>@ViewBag.Normal</th>
+                                <th>@ViewBag.Iyi</th>
+                                <th>
+                                    @switch (ViewBag.Ortalama)
+                                    {
+                                    case 0:
+                                    <span class="m-badge m-badge--danger m-badge--wide">kötü</span>
+                                    break;
+                                    case 1:
+                                    <span class="m-badge m-badge--brand m-badge--wide">normal</span>
+                                    break;
+                                    case 2:
+                                    <span class="m-badge m-badge--success m-badge--wide">iyi</span>
+                                    break;
+                                    }
+                                    @*@{
+                                            if (ViewBag.Ortalama == "0")
+                                            {
+                                                <span class="m-badge m-badge--danger m-badge--wide">Kötü</span>
+                                            }
+                                            if (ViewBag.Ortalama == "1")
+                                            {
+                                                <span class="m-badge m-badge--brand m-badge--wide">Normal</span>
+                                            }
+                                            if (ViewBag.Ortalama == "2")
+                                            {
+                                                <span class="m-badge m-badge--success m-badge--wide">İyi</span>
+                                            }
+
+                                        }*@
+                                </th>
+                            </tr>
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!--end::Section-->
+            <!--begin::Section-->
+            <!--end::Section-->
+        </div>
+
+        <!--end::Form-->
+    </div>
+
+    <!--end::Portlet-->
+
+</div>

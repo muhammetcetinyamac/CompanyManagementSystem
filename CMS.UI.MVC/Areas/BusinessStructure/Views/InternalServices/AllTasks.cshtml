@@ -1,0 +1,76 @@
+﻿@model List<CMS.MODEL.Entities.Tasks>
+@{
+    ViewBag.Title = "AllTasks";
+    Layout = "~/Areas/BusinessStructure/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-lg-12">
+    <!--begin::Portlet-->
+    <div class="m-portlet">
+        <div class="m-portlet__head">
+            <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                    <h3 class="m-portlet__head-text">
+                        Tüm Görevler
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="m-portlet__body">
+            <!--begin::Section-->
+            <div class="m-section">
+                <div class="m-section__content">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Görevi Sahibi</th>
+                                <th>Görev Adı</th>
+                                <th>İçerik</th>
+                                <th>Verilme Tarihi</th>
+                                <th>Değiştirilme Tarihi</th>
+                                <th>Durum</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <th>@item.Employees.FirstName @item.Employees.LastName</th>
+                                    <th>@item.TaskName</th>
+                                    <th>@item.JobDescription</th>
+                                    <th>@item.CreatedDate</th>
+                                    <th>@item.ModifiedDate</th>
+                                    <th>
+                                        @{
+                                            if ((int)item.Confirmation == 2)
+                                            {
+                                                <span class="m-badge m-badge--success m-badge--wide">Görev Tamamlandı</span>
+                                            }
+                                            else if ((int)item.Confirmation == 7)
+                                            {
+                                                <span class="m-badge m-badge--danger m-badge--wide">Görev Reddedildi</span>
+                                            }
+                                            else if ((int)item.Confirmation == 1)
+                                            {
+                                                <span class="m-badge m-badge--success m-badge--wide">Devam Ediyor</span>
+                                            }
+                                        }
+                                    </th>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!--end::Section-->
+            <!--begin::Section-->
+            <!--end::Section-->
+        </div>
+
+        <!--end::Form-->
+    </div>
+
+    <!--end::Portlet-->
+
+</div>

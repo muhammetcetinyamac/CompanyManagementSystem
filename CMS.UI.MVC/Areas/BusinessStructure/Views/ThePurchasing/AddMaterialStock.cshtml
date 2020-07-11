@@ -1,0 +1,99 @@
+﻿@model CMS.MODEL.Entities.Material
+@{
+    ViewBag.Title = "AddMaterialStock";
+    Layout = "~/Areas/BusinessStructure/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="col-lg-6">
+
+        <div class="m-portlet m-portlet--tab">
+
+            <!-- BEGIN: Subheader -->
+            <!-- END: Subheader -->
+          
+            <div class="m-content">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <!--begin::Portlet-->
+                        <div class="m-portlet">
+                            <div class="m-portlet__head">
+                                <div class="m-portlet__head-caption">
+                                    <div class="m-portlet__head-title">
+                                        <h3 class="m-portlet__head-text">
+                                           @Model.MaterialName
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="m-portlet__body">
+
+                                <!--begin::Section-->
+                                <div class="m-section">
+
+                                    <div class="m-section__content">
+                                        <div class="form-group m-form__group row">
+                                            <label for="example-text-input" class="col-3 col-form-label">Materyal Adı</label>
+                                            <div class="col-9">
+                                                <h3>@Model.MaterialName</h3>
+                                            </div>
+                                        </div>
+                                        <div class="form-group m-form__group row">
+                                            <label for="example-text-input" class="col-3 col-form-label">Stokta Bulunan Miktar</label>
+                                            <div class="col-9">
+                                                <h3>@Model.UnitsInStock</h3>
+                                            </div>
+                                        </div>                                      
+                                    </div>
+                                </div>
+
+                                <!--end::Section-->
+                                <!--begin::Section-->
+                                <!--end::Section-->
+                            </div>
+
+                            <!--end::Form-->
+                        </div>
+
+                        <!--end::Portlet-->
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="m-portlet m-portlet--tab">
+            <div class="m-portlet__head">
+                <div class="m-portlet__head-caption">
+                    <div class="m-portlet__head-title">
+                        <span class="m-portlet__head-icon m--hide">
+                            <i class="la la-gear"></i>
+                        </span>
+                        <h3 class="m-portlet__head-text">
+                            Materyal Ekle
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            @using (Html.BeginForm("AddMaterialStock", "ThePurchasing", FormMethod.Post))
+            {
+                <!--begin::Form-->
+                <form class="m-portlet m-portlet--tab">
+                    <div class="m-portlet__body">
+                        <div class="form-group m-form__group">
+                            <label>Eklenecek Miktar</label>
+                            <input type="text" class="form-control m-input" name="UnitsInStock" placeholder="Ekleyeceğiniz Miktarı Giriniz" required>
+                        </div>                     
+                        <div class="m-portlet__foot m-portlet__foot--fit">
+                            <div class="m-form__actions">
+                                <button type="submit" class="btn btn-accent">Ekle</button>
+                            </div>
+                        </div>
+                    </div>
+                  
+                </form>
+            }
+            <!--end::Form-->
+        </div>
+    </div>

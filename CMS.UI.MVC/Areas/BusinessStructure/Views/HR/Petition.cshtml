@@ -1,0 +1,66 @@
+﻿@model List<CMS.MODEL.Entities.Petition>
+@{
+    ViewBag.Title = "Petition";
+    Layout = "~/Areas/BusinessStructure/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-xl-12">
+    <!--begin::Portlet-->
+    <div class="m-portlet">
+        <div class="m-portlet__head">
+            <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                    <h3 class="m-portlet__head-text">
+                        Dilekçeler
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="m-portlet__body">
+
+            <!--begin::Section-->
+            <div class="m-section">
+
+                <div class="m-section__content">
+                    <table class="table">
+                        <thead>                           
+                            <tr>
+                                <th>TC Kimlik</th>
+                                <th>Sahibi</th>
+                                <th>Konusu</th>
+                                <th>İlgili Kurum</th>
+                                <th>İçerik</th>
+                                <th>Tarih</th>
+                                <th>İşlem</th>
+                            </tr>                          
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                            <tr>
+                                <th>@item.Employees.TCKN</th>
+                                <th>@item.Employees.FirstName @item.Employees.LastName</th>
+                                <th>@item.Type</th>
+                                <th>@item.RelatedInstitution</th>
+                                <th>@item.Content</th>
+                                <th>@item.CreatedDate.ToShortDateString()</th>
+                                <th><a href="@Url.Action("PetitionApprove","HR" , new { Id = item.Id })" name="@item.Id" class="btn m-btn--pill m-btn--air m-btn m-btn--gradient-from-primary m-btn--gradient-to-info">Onayla</a> <a href="@Url.Action("PetitionRejection","HR" , new { Id = item.Id })" name="@item.Id" class="btn m-btn--pill m-btn--air m-btn m-btn--gradient-from-danger m-btn--gradient-to-warning">Reddet</a></th>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+           
+            <!--end::Section-->
+            <!--begin::Section-->
+            <!--end::Section-->
+        </div>
+
+        <!--end::Form-->
+    </div>
+
+    <!--end::Portlet-->
+
+</div>
+

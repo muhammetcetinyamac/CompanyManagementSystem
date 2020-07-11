@@ -1,0 +1,98 @@
+﻿
+@{
+    ViewBag.Title = "UpdateOrder";
+    Layout = "~/Areas/BusinessStructure/Views/Shared/_Layout.cshtml";
+    Session["OrderId"] = ViewBag.GetOrder.Id;
+}
+
+    <div class="col-md-12">
+        <h2>Pazarlama</h2>
+        <!--Begin::Portlet-->
+        <div class="m-portlet m-portlet--full-height  m-portlet--unair">
+            <div class="m-portlet__head">
+                <div class="m-portlet__head-caption">
+                    <div class="m-portlet__head-title">
+                        <h3 class="m-portlet__head-text">
+                            Sipariş
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="m-portlet__body">
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Müşteri</th>
+                            <th>Siparişi Alan</th>
+                            <th>Sipariş Tipi</th>
+                            <th>Tarih</th>
+                            <th>İstenilen Tarih</th>
+                            <th>Taşıma Tarihi</th>
+                            <th>Taşıma Adresi</th>
+                            <th>Sipariş Durumu</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>@ViewBag.GetOrder.Customer.CompanyName</th>
+                            <th>@ViewBag.GetOrder.Employee.FirstName @ViewBag.GetOrder.Employee.LastName</th>
+                            <th>@ViewBag.GetOrder.OrdersType</th>
+                            <th>@ViewBag.GetOrder.CreatedDate</th>
+                            <th>@ViewBag.GetOrder.RequiredDate</th>
+                            <th>@ViewBag.GetOrder.ShippedDate</th>
+                            <th>@ViewBag.GetOrder.ShipAddress / @ViewBag.GetOrder.ShipCountry</th>
+                            <th>@ViewBag.GetOrder.Status</th>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="col-md-12">
+        <h2>Pazarlama</h2>
+        <!--Begin::Portlet-->
+        <div class="m-portlet m-portlet--full-height  m-portlet--unair">
+            <div class="m-portlet__head">
+                <div class="m-portlet__head-caption">
+                    <div class="m-portlet__head-title">
+                        <h3 class="m-portlet__head-text">
+                            Siparişteki Mevcut Ürün
+                        </h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="m-portlet__body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Kategori</th>
+                            <th>Ürün Adı</th>
+                            <th>Açıklama</th>
+                            <th>Ürün Ölçüsü</th>
+                            <th>Birim Fiyatı</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    
+                            <tr>
+                                <th>@ViewBag.GetProduct.Category.CategoryName</th>
+                                <th>@ViewBag.GetProduct.ProductName</th>
+                                <th>@ViewBag.GetProduct.Description</th>
+                                <th>@ViewBag.GetProduct.Height x @ViewBag.GetProduct.Width</th>
+                                <th>@ViewBag.GetProduct.Price</th>
+                               
+                            </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>

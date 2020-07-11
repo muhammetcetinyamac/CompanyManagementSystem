@@ -1,0 +1,131 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/BusinessStructure/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="col-md-12">
+
+    <!--Begin::Portlet-->
+    <div class="m-portlet m-portlet--full-height  m-portlet--unair">
+        <div class="m-portlet__head">
+            <h2>İç Hizmetler</h2>
+            <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                    <h3 class="m-portlet__head-text">
+                        İşlemler
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="m-portlet__body">
+            <div class="tab-content">
+
+                <div class="m-demo" data-code-preview="true" data-code-html="true" data-code-js="false">
+
+                    <div class="m-demo__preview m-demo__preview--btn">
+                        <a href="@Url.Action("AllTasks","InternalServices")" class="btn btn-success btn-lg m-btn  m-btn m-btn--icon">
+                            <span>
+                                <i class="fa flaticon-interface-6"></i>
+                                <span>Tüm Görevler</span>
+                            </span>
+                        </a>
+
+                        <a href="@Url.Action("AddEmployment","InternalServices")" class="btn btn-primary btn-lg m-btn  m-btn m-btn--icon">
+                            <span>
+                                <i class="fa flaticon-interface-6"></i>
+                                <span>Görevlendirme</span>
+                            </span>
+                        </a>
+
+
+                        <a href="@Url.Action("VehicleFleet","InternalServices")" class="btn btn-success btn-lg m-btn 	m-btn m-btn--icon">
+                            <span>
+                                <i class="fa flaticon-calendar-1"></i>
+                                <span>Araç Filosu</span>
+                            </span>
+                        </a>
+                        <a href="@Url.Action("AddVehicle","InternalServices")" class="btn btn-primary btn-lg m-btn 	m-btn m-btn--icon">
+                            <span>
+                                <i class="fa flaticon-calendar-1"></i>
+                                <span>Araç Ekle</span>
+                            </span>
+                        </a>
+
+                        <a href="@Url.Action("Materiel","InternalServices")" class="btn btn-success btn-lg m-btn 	m-btn m-btn--icon">
+                            <span>
+                                <i class="fa flaticon-calendar-1"></i>
+                                <span>Malzemeler</span>
+                            </span>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!--End::Portlet-->
+</div>
+<div class="col-xl-12">
+
+    <!--begin:: Widgets/Quick Stats-->
+    <div class="row m-row--full-height">
+        <div class="col-sm-12 col-md-12 col-lg-6">
+            <div class="m-portlet m-portlet--half-height m-portlet--border-bottom-brand ">
+                <div class="m-portlet__body">
+                    <div class="m-widget26">
+                        <div class="m-widget26__number">
+                            @ViewBag.TotalTasks
+                            <small>Yapılması Beklenen Toplam Görev</small>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="m--space-30"></div>
+            <div class="m-portlet m-portlet--half-height m-portlet--border-bottom-danger ">
+                <div class="m-portlet__body">
+                    <div class="m-widget26">
+                        <div class="m-widget26__number">
+                            @ViewBag.TotalVehicle
+                            <small>Toplam Araç</small>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-6">
+            <div class="m-portlet m-portlet--half-height m-portlet--border-bottom-success ">
+                <div class="m-portlet__body">
+                    <div class="m-widget26">
+                        <div class="m-widget26__number">
+                            @ViewBag.TotalDebit
+                            <small>Toplam Zimmet</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="m--space-30"></div>
+            <div class="m-portlet m-portlet--half-height m-portlet--border-bottom-accent ">
+                <div class="m-portlet__body">
+                    <div class="m-widget26">
+                        <div class="m-widget26__number">
+                            @ViewBag.Duyurular
+                            <small>Duyurular</small>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--end:: Widgets/Quick Stats-->
+</div>
+
+

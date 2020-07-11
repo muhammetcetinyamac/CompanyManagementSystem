@@ -1,0 +1,63 @@
+﻿@model IEnumerable<CMS.MODEL.Entities.Orders>
+@{
+    ViewBag.Title = "IncomingOrder";
+    Layout = "~/Areas/BusinessStructure/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="col-md-12">
+        <h2>Üretim</h2>
+        <!--Begin::Portlet-->
+        <div class="m-portlet m-portlet--full-height  m-portlet--unair">
+            <div class="m-portlet__head">
+                <div class="m-portlet__head-caption">
+                    <div class="m-portlet__head-title">
+                        <h3 class="m-portlet__head-text">
+                            Gelen Sipariş
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="m-portlet__body">
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Müşteri</th>
+                            <th>Siparişi Alan</th>
+                            <th>Sipariş Tipi</th>
+                            <th>Tarih</th>
+                            <th>İstenilen Tarih</th>
+                            <th>Sipariş Durumu</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <th>@item.Customer.CompanyName</th>
+                                <th>@item.Employee.FirstName @item.Employee.LastName</th>
+                                <th>@item.OrdersType</th>
+                                <th>@item.CreatedDate</th>
+                                <th>@item.RequiredDate</th>          
+                                
+                                <th>
+                                    @if ((int)item.Status == 3)
+                                    {
+                                        <span class="m-badge m-badge--danger m-badge--wide">Üretimi Bekleniyor</span>
+                                    }
+
+                                </th>
+                                <th> <a href="@Url.Action("FinishOrder","Production" , new { Id = item.Id })" name="@item.Id" class="btn m-btn--pill m-btn--air m-btn m-btn--gradient-from-primary m-btn--gradient-to-info">Üretimi Tamamla</a> </th>
+                            </tr>
+                        }
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+

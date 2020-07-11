@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/BusinessStructure/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-12">
+
+    <!--Begin::Portlet-->
+    <div class="m-portlet m-portlet--full-height  m-portlet--unair">
+        <div class="m-portlet__head">
+            <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                    <h3 class="m-portlet__head-text">
+                        Depo
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="m-portlet__body">
+            <div class="tab-content">
+                <div class="m-demo" data-code-preview="true" data-code-html="true" data-code-js="false">
+                    <div class="m-demo__preview m-demo__preview--btn">                       
+                        <a href="@Url.Action("Orders","Warehouse")" class="btn btn-brand m-btn btn-lg 	m-btn m-btn--icon">
+                            <span>
+                                <i class="fa flaticon-search"></i>
+                                <span>Depodaki Ürünler</span>
+                            </span>
+                        </a>
+                      
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!--End::Portlet-->
+</div>
+<div class="col-xl-12">
+
+    <!--begin:: Widgets/Quick Stats-->
+    <div class="row m-row--full-height">
+        <div class="col-sm-12 col-md-12 col-lg-6">
+            <div class="m-portlet m-portlet--half-height m-portlet--border-bottom-brand ">
+                <div class="m-portlet__body">
+                    <div class="m-widget26">
+                        <div class="m-widget26__number">
+                            @ViewBag.TotalOrder
+                            <small>Depodaki Ürün Sayısı</small>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="m--space-30"></div>
+            <div class="m-portlet m-portlet--half-height m-portlet--border-bottom-danger ">
+                <div class="m-portlet__body">
+                    <div class="m-widget26">
+                        <div class="m-widget26__number">
+                            @ViewBag.TotalEmployee
+                            <small>Depoda Çalışan Eleman Sayısı</small>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    <!--end:: Widgets/Quick Stats-->
+</div>
+    </div>

@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "IncomingOrder";
+    Layout = "~/Areas/BusinessStructure/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="col-md-12">
+        <h2>Satın Alma</h2>
+        <!--Begin::Portlet-->
+        <div class="m-portlet m-portlet--full-height  m-portlet--unair">
+            <div class="m-portlet__head">
+                <div class="m-portlet__head-caption">
+                    <div class="m-portlet__head-title">
+                        <h3 class="m-portlet__head-text">
+                            Gelen Siparişler
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="m-portlet__body">
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Müşteri</th>
+                            <th>Siparişi Alan</th>
+                            <th>Sipariş Tipi</th>
+                            <th>Tarih</th>
+                            <th>İstenilen Tarih</th>
+                            <th>Taşıma Tarihi</th>
+                            <th>Taşıma Adresi</th>
+                            <th>Ücret</th>
+                            <th>Sipariş Durumu</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Müşteri</th>
+                            <th>Siparişi Alan</th>
+                            <th>Sipariş Tipi</th>
+                            <th>Tarih</th>
+                            <th>İstenilen Tarih</th>
+                            <th>Taşıma Tarihi</th>
+                            <th>Taşıma Adresi</th>
+                            <th>Ücret</th>
+                            <th><span class="m-badge m-badge--danger m-badge--wide">Satın Alma Bekleniyor</span></th>
+                            <th><button type="button" class="btn btn-outline-primary">Satın Alma İşlemini Başlat</button><button type="button" class="btn btn-outline-danger">Siparişi İptal Et</button></th>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+

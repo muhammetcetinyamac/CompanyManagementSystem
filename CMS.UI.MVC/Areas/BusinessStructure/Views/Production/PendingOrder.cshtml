@@ -1,0 +1,53 @@
+﻿@model List<CMS.MODEL.Entities.Orders>
+@{
+    ViewBag.Title = "PendingOrder";
+    Layout = "~/Areas/BusinessStructure/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-12">
+    <h2>Üretim</h2>
+    <!--Begin::Portlet-->
+    <div class="m-portlet m-portlet--full-height  m-portlet--unair">
+        <div class="m-portlet__head">
+            <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                    <h3 class="m-portlet__head-text">
+                        Üretilmesi Planlanan Siparişler
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="m-portlet__body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Müşteri</th>
+                        <th>Siparişi Alan</th>
+                        <th>Tarih</th>
+
+                        <th>Sipariş Durumu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <th>@item.Customer.CompanyName</th>
+                            <th>@item.Employee.FirstName @item.Employee.LastName</th>
+                            <th>@item.CreatedDate</th>
+
+                            <th>
+                                @if ((int)item.Status == 1 )
+                                {
+                                    <span class="m-badge m-badge--success m-badge--wide">@item.Status</span>
+                                }
+
+                            </th>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

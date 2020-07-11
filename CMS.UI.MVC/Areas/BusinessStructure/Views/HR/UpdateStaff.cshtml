@@ -1,0 +1,71 @@
+﻿@model CMS.MODEL.Entities.Employees
+@{
+    ViewBag.Title = "UpdateStaff";
+    Layout = "~/Areas/BusinessStructure/Views/Shared/_Layout.cshtml";
+}
+    <div class="col-md-12">
+        <h2>İnsan Kaynakları</h2>
+
+        <div class="m-portlet m-portlet--tab">
+          
+            <div class="m-portlet__head">
+                <div class="m-portlet__head-caption">
+                    <div class="m-portlet__head-title">
+                        <span class="m-portlet__head-icon m--hide">
+                            <i class="la la-gear"></i>
+                        </span>
+                        <h3 class="m-portlet__head-text">
+                            Personel Güncelle
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            @using (Html.BeginForm("UpdateStaff", "HR", FormMethod.Post))
+            {
+                <form class="m-form m-form--fit m-form--label-align-right">
+                    <div class="m-portlet__body">
+                        <div class="form-group m-form__group">
+                            <label>Tc Kimlik No</label>
+                            <input type="text" value="@Model.TCKN" class="form-control m-input" name="TCKN">
+                        </div>
+                        <div class="form-group m-form__group">
+                            <label>Adı</label>
+                            <input type="text" value="@Model.FirstName" class="form-control m-input" name="FirstName">
+                        </div>
+
+                        <div class="form-group m-form__group">
+                            <label>Soyadı</label>
+                            <input type="text" value="@Model.LastName" class="form-control m-input" name="LastName">
+                        </div>
+                        <div class="form-group m-form__group">
+                            <label>Adres</label>
+                            <input type="text" value="@Model.Address" class="form-control m-input" name="Address">
+                        </div>
+                        <div class="form-group m-form__group">
+                            <label>Telefonu</label>
+                            <input type="text" value="@Model.Phone" class="form-control m-input" name="Phone">
+                        </div>
+                        <div class="form-group m-form__group">
+                            <label>EMail</label>
+                            <input type="text" value="@Model.EMail" class="form-control m-input" name="EMail">
+                        </div>
+                        <div class="form-group m-form__group">
+                            <label>Ücreti</label>
+                            <input type="text" value="@Model.Price" class="form-control m-input" name="Price">
+                        </div>
+                        <div class="form-group m-form__group">
+                            <label>Personel Hakkında</label>
+                            <input type="text" value="@Model.Notes" class="form-control m-input" name="Notes">
+                        </div>
+                    </div>
+                    <div class="m-portlet__foot m-portlet__foot--fit">
+                        <div class="m-form__actions">
+                            <button type="submit" class="btn btn-success">Güncelle</button>
+                        </div>
+                    </div>
+                </form>
+            }
+        </div>
+
+
+    </div>

@@ -1,0 +1,90 @@
+﻿@model List<CMS.MODEL.Entities.Announcement>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/BusinessStructure/Views/Shared/_Layout.cshtml";
+}
+    <div class="col-md-6">
+
+        <!--Begin::Portlet-->
+        <div class="m-portlet m-portlet--full-height  m-portlet--unair">
+            <div class="m-portlet__head">
+                <div class="m-portlet__head-caption">
+                    <div class="m-portlet__head-title">
+                        <h3 class="m-portlet__head-text">
+                            Kişisel Alan
+                        </h3>
+                    </div>
+                </div>            
+            </div>
+            <div class="m-portlet__body">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="m_widget2_tab1_content">
+
+                        <img src="http://www.mgm.gov.tr/sunum/sondurum-show-2.aspx?m=ANKARA&rC=111&rZ=fff" style="width:140px; height:100px;" alt="ANKARA" />
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!--End::Portlet-->
+    </div>
+    
+                   
+   
+    <div class="col-md-6">
+
+        <!--Begin::Portlet-->
+        <div class="m-portlet m-portlet--full-height  m-portlet--unair">
+            <div class="m-portlet__head">
+                <div class="m-portlet__head-caption">
+                    <div class="m-portlet__head-title">
+                        <h3 class="m-portlet__head-text">
+                            Duyurular
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="m-portlet__body">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="m_widget2_tab1_content">
+
+                        <!--Begin::Timeline 3 -->
+                        <div class="m-timeline-3">
+                            @foreach (var item in Model)
+                            {
+                                <div class="m-timeline-3__items">
+                                    <div class="m-timeline-3__item m-timeline-3__item--info">
+                                        &nbsp;&nbsp;&nbsp;
+                                        <span class="m-timeline-3__item-time">@item.ModifiedDate.ToShortTimeString()</span>
+                                        <div class="m-timeline-3__item-desc">
+                                            <span class="m-timeline-3__item-text">
+                                                @item.ModifiedDate.ToShortDateString()
+                                            </span><br>
+                                            <span class="m-timeline-3__item-text">
+                                                @item.Content
+                                            </span><br>
+                                            <span class="m-timeline-3__item-user-name">
+                                                <a href="#" class="m-link m-link--metal m-timeline-3__item-link">
+                                                    @item.Employees.FirstName @item.Employees.LastName - @item.Employees.Title
+                                                </a>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            }
+
+                        </div>
+
+                        <!--End::Timeline 3 -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!--End::Portlet-->
+    </div>
+

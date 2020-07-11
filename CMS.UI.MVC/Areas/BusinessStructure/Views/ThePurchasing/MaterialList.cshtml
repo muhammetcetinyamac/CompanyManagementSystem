@@ -1,0 +1,51 @@
+﻿@model List<CMS.MODEL.Entities.Material>
+@{
+    ViewBag.Title = "MaterialList";
+    Layout = "~/Areas/BusinessStructure/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="col-md-12">
+        <h2>Satın Alma</h2>
+        <!--Begin::Portlet-->
+        <div class="m-portlet m-portlet--full-height  m-portlet--unair">
+            <div class="m-portlet__head">
+                <div class="m-portlet__head-caption">
+                    <div class="m-portlet__head-title">
+                        <h3 class="m-portlet__head-text">
+                            Malzemeler
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="m-portlet__body">               
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Görsel</th>
+                            <th>Malzeme Adı</th>
+                            <th>Eklenme Tarihi</th>
+                            <th>Birim Ücreti</th>
+                            <th>Stok Adeti</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <th>Görsel</th>
+                                <th>@item.MaterialName</th>
+                                <th>@item.CreatedDate</th>
+                                <th>@item.UnitPrice</th>
+                                <th>@item.UnitsInStock</th>
+                                <th><a href="@Url.Action("AddMaterialStock","ThePurchasing" , new { Id = item.Id })" name="@item.Id" class="btn m-btn--pill m-btn--air m-btn m-btn--gradient-from-success m-btn--gradient-to-success">Stok Ekle</a> <a href="@Url.Action("UpdateMaterialStock","ThePurchasing" , new { Id = item.Id })" name="@item.Id" class="btn m-btn--pill m-btn--air m-btn m-btn--gradient-from-info m-btn--gradient-to-info">Güncelle</a></th>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+

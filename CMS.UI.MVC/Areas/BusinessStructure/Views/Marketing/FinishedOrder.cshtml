@@ -1,0 +1,57 @@
+﻿@model List<CMS.MODEL.Entities.Orders>
+@{
+    ViewBag.Title = "FinishedOrder";
+    Layout = "~/Areas/BusinessStructure/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="col-md-12">
+        <h2>Pazarlama</h2>
+        <!--Begin::Portlet-->
+        <div class="m-portlet m-portlet--full-height  m-portlet--unair">
+            <div class="m-portlet__head">
+                <div class="m-portlet__head-caption">
+                    <div class="m-portlet__head-title">
+                        <h3 class="m-portlet__head-text">
+                            Tamamlanan Siparişler
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="m-portlet__body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Müşteri</th>
+                            <th>Siparişi Alan</th>
+                            <th>Sipariş Tipi</th>
+                            <th>Tarih</th>
+                            <th>İstenilen Tarih</th>
+                            <th>Taşıma Tarihi</th>
+                            <th>Taşıma Adresi</th>
+                            <th>Ücret</th>
+                            <th>Sipariş Durumu</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            @foreach (var item in Model)
+                            {
+                                <th>@item.Customer.CompanyName</th>
+                                <th>@item.Employee.FirstName @item.Employee.LastName</th>
+                                <th>@item.OrdersType</th>
+                                <th>@item.CreatedDate</th>
+                                <th>@item.RequiredDate Tarih</th>
+                                <th>@item.ShippedDate</th>
+                                <th>@item.ShipAddress / @item.ShipCountry</th>         
+                                <th>@item.TotalPrice</th>
+                                <th><span class="m-badge m-badge--info m-badge--wide">@item.Status</span></th>
+                            }
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+

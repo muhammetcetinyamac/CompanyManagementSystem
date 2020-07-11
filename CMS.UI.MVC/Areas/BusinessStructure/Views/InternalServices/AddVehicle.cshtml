@@ -1,0 +1,67 @@
+﻿@model CMS.MODEL.Entities.VehicleFleet
+@{
+    ViewBag.Title = "AddVehicle";
+    Layout = "~/Areas/BusinessStructure/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="col-md-12">
+        <h2>İç Hizmetler</h2>
+
+        <div class="m-portlet m-portlet--tab">
+
+            <div class="m-portlet__head">
+                <div class="m-portlet__head-caption">
+                    <div class="m-portlet__head-title">
+                        <span class="m-portlet__head-icon m--hide">
+                            <i class="la la-gear"></i>
+                        </span>
+                        <h3 class="m-portlet__head-text">
+                            Araç Ekle
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            @using (Html.BeginForm("AddVehicle", "InternalServices", FormMethod.Post))
+            {
+                <form class="m-form m-form--fit m-form--label-align-right">
+                    <div class="m-portlet__body">
+                        <div class="form-group m-form__group">
+                            <label for="exampleInputEmail1">Araç Tipi</label>
+                            <input type="text" class="form-control m-input" name="Type" placeholder="Araç Tipi">
+                        </div>
+                        <div class="form-group m-form__group">
+                            <label for="exampleInputEmail1">Marka</label>
+                            <input type="text" class="form-control m-input" name="Brand" placeholder="Marka">
+                        </div>
+                        <div class="form-group m-form__group">
+                            <label for="exampleInputEmail1">Model</label>
+                            <input type="text" class="form-control m-input" name="Model" placeholder="Model">
+                        </div>
+                        <div class="form-group m-form__group">
+                            <label for="exampleInputEmail1">Konum</label>
+                            <input type="text" class="form-control m-input" name="Location" placeholder="Konum">
+                        </div>
+                        <div class="form-group m-form__group">
+                            <label for="exampleSelect1">Sahibi</label>
+                            <select class="form-control m-input" name="EmployeesId">
+                                @foreach (var item in ViewBag.GetAllEmp)
+                                {
+                                    <option value="@item.Id">@item.FirstName @item.LastName</option>
+                                }
+
+                            </select>
+                        </div>
+                        <div class="m-portlet__foot m-portlet__foot--fit">
+                            <div class="m-form__actions">
+                                <button type="submit" class="btn btn-success">Ekle</button>
+                            </div>
+                        </div>
+                    </div>
+                  
+                </form>
+            }
+            </div>
+
+
+    </div>
+

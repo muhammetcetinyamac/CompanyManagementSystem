@@ -1,0 +1,99 @@
+﻿@model List<CMS.MODEL.Entities.Orders>
+@{
+    ViewBag.Title = "AddOrder";
+    Layout = "~/Areas/BusinessStructure/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-12">
+    <h2>Pazarlama</h2>
+
+    <div class="m-portlet m-portlet--tab">
+
+        <div class="m-portlet__head">
+            <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                    <span class="m-portlet__head-icon m--hide">
+                        <i class="la la-gear"></i>
+                    </span>
+                    <h3 class="m-portlet__head-text">
+                        Sipariş Ekle
+                    </h3>
+                </div>
+            </div>
+        </div>
+        @using (Html.BeginForm("AddOrder", "Marketing", FormMethod.Post))
+        {
+            <form class="m-form m-form--fit m-form--label-align-right">
+                <div class="m-portlet__body">
+                    <div class="form-group m-form__group">
+                        <label for="exampleSelect1">Müşteri</label>
+                        <select class="form-control m-input" name="CustomerID">
+                            @foreach (var item in ViewBag.GetAllCustomers)
+                            {
+                                <option value="@item.Id">@item.CompanyName</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group m-form__group">
+                        <label for="exampleSelect1">Sipariş Tipi</label>
+                        <select class="form-control m-input" name="OrderType">
+                            @foreach (var item in ViewBag.OrderType)
+                            {
+
+                                <option value="@item">@item</option>
+                            }
+
+                        </select>
+                    </div>
+                    <div class="form-group m-form__group">
+                        <label>Ürün</label>
+                        <select class="form-control m-input" name="ProductID">
+                            @foreach (var item in ViewBag.GetAllProducts)
+                            {
+                                <option value="@item.Id">@item.ProductName</option>
+
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group m-form__group">
+                        <label>İstenilen Tarih</label>
+                        <input class="form-control m-input" type="date" name="RequiredDate">
+                    </div>
+                    <div class="form-group m-form__group">
+                        <label for="exampleSelect1">Taşıyıcı</label>
+                        <select class="form-control m-input" name="ShipperID">
+                            @foreach (var item in ViewBag.GetAllShippers)
+                            {
+                                <option value="@item.Id">@item.CompanyName</option>
+                            }
+
+                        </select>
+                    </div>
+                    <div class="form-group m-form__group">
+                        <label>Toplam Fiyat</label>
+                        <input type="number" class="form-control m-input" name="TotalPrice" placeholder="Toplam Fiyat">
+                    </div>
+                    <div class="form-group m-form__group">
+                        <label>Gönderi Adresi</label>
+                        <input type="text" class="form-control m-input" name="ShipAddress" placeholder="Gönderi Adresi">
+                    </div>
+                    <div class="form-group m-form__group">
+                        <label>Ülke</label>
+                        <input type="text" class="form-control m-input" name="ShipCountry" placeholder="Taşıma Şehri">
+                    </div>
+                    <div class="m-portlet__foot m-portlet__foot--fit">
+                        <div class="m-form__actions">
+                            <button type="submit" class="btn btn-success">Ekle</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        }
+    </div>
+
+
+</div>
+
+
+
+

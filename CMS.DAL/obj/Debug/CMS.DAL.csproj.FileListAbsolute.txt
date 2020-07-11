@@ -1,0 +1,16 @@
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.DAL\obj\Debug\CMS.DAL.csprojAssemblyReference.cache
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.DAL\bin\Debug\CMS.DAL.dll.config
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.DAL\bin\Debug\CMS.DAL.dll
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.DAL\bin\Debug\CMS.DAL.pdb
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.DAL\bin\Debug\CMS.MODEL.dll
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.DAL\bin\Debug\EntityFramework.dll
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.DAL\bin\Debug\CMS.CORE.dll
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.DAL\bin\Debug\CMS.MODEL.pdb
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.DAL\bin\Debug\EntityFramework.xml
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.DAL\bin\Debug\CMS.CORE.pdb
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.DAL\bin\Debug\CMS.CORE.dll.config
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.DAL\obj\Debug\CMS.DAL.csproj.CopyComplete
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.DAL\obj\Debug\CMS.DAL.dll
+C:\Users\Çetinyamaç\source\repos\CompanyManagementSystem\CMS.DAL\obj\Debug\CMS.DAL.pdb

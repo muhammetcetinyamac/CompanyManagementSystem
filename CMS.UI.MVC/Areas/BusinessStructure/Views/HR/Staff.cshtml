@@ -1,0 +1,105 @@
+﻿@model List<CMS.MODEL.Entities.Employees>
+@{
+    ViewBag.Title = "Staff";
+    Layout = "~/Areas/BusinessStructure/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="col-xl-12 col-xl-6">
+        <!--begin::Portlet-->
+        <div class="m-portlet">
+
+            <div class="m-portlet__head">
+               
+                <div class="m-portlet__head-caption">
+                    <div class="m-portlet__head-title">
+                        <h3 class="m-portlet__head-text">
+                            Personeller
+                        </h3>
+                    </div>
+
+                </div>
+
+            </div>
+            
+            <div class="m-portlet__body">
+
+                <!--begin::Section-->
+                <div class="m-section">
+
+                    <div class="m-section__content">
+                        <div class="m-demo__preview m-demo__preview--btn">
+                            <a href="@Url.Action("AddStaff","HR")" class="btn btn-success btn-lg m-btn 	m-btn m-btn--icon m-btn--pill">
+                                <span>
+                                    <i class="fa fa-archive"></i>
+                                    <span>Personel Ekle</span>
+                                </span>
+                            </a>
+                        </div>
+
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>TC Kimlik No</th>
+                                    <th>Ad Soyad</th>
+                                    <th>Departman</th>
+                                    <th>Ünvan</th>
+                                    <th>Doğum Tarihi</th>
+                                    <th>İşe Giriş Tarihi</th>
+                                    <th>Maaş</th>
+                                    <th>Durum</th>
+                                    <th>İşlem</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <th>@item.TCKN</th>
+                                        <th>@item.FirstName @item.LastName</th>
+                                        <th>@item.Department</th>
+                                        <th>@item.Title</th>
+                                        <th>@item.BirthDate</th>
+                                        <th>@item.HireDate</th>
+                                        <th>@item.Price</th>
+                                        <th>
+                                            @{
+                                                if (item.IsActive)
+                                                {
+                                                    <span class="m-badge m-badge--success m-badge--wide">Aktif</span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="m-badge m-badge--danger m-badge--wide">Pasif</span>
+                                                }
+
+                                                if (item.Holiday)
+                                                {
+                                                    <span class="m-badge m-badge--danger m-badge--wide">Tatilde</span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="m-badge m-badge--success m-badge--wide">Çalışıyor</span>
+                                                }
+                                            }
+                                        </th>
+                                        <th><a href="@Url.Action("UpdateStaff","HR" , new { Id = item.Id })" name="@item.Id" class="btn m-btn--pill m-btn--air m-btn m-btn--gradient-from-primary m-btn--gradient-to-info">Güncelle</a> <a href="@Url.Action("DeleteStaff","HR" , new { Id = item.Id })" name="@item.Id" class="btn m-btn--pill m-btn--air m-btn m-btn--gradient-from-danger m-btn--gradient-to-warning">Sil</a></th>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!--end::Section-->
+                <!--begin::Section-->
+                <!--end::Section-->
+            </div>
+
+            <!--end::Form-->
+        </div>
+
+        <!--end::Portlet-->
+
+    </div>
+

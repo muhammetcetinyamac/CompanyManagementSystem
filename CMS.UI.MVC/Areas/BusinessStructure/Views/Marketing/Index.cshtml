@@ -1,0 +1,126 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/BusinessStructure/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-12">
+
+    <!--Begin::Portlet-->
+    <div class="m-portlet m-portlet--full-height  m-portlet--unair">
+        <div class="m-portlet__head">
+            <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                    <h3 class="m-portlet__head-text">
+                        Pazarlama
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="m-portlet__body">
+            <div class="tab-content">
+
+                <div class="m-demo" data-code-preview="true" data-code-html="true" data-code-js="false">
+                    <div class="m-demo__preview m-demo__preview--btn">
+                        <a href="@Url.Action("Order","Marketing")" class="btn btn-primary btn-lg m-btn  m-btn m-btn--icon">
+                            <span>
+                                <i class="fa flaticon-interface-6"></i>
+                                <span>Tüm Siparişler</span>
+                            </span>
+                        </a>
+                        <a href="@Url.Action("FinishedOrder","Marketing")" class="btn btn-brand m-btn btn-lg 	m-btn m-btn--icon">
+                            <span>
+                                <i class="fa flaticon-search"></i>
+                                <span>Tamamlanan Siparişler</span>
+                            </span>
+                        </a>
+                        <a href="@Url.Action("ExpectedOrder","Marketing")" class="btn btn-success btn-lg m-btn 	m-btn m-btn--icon">
+                            <span>
+                                <i class="fa flaticon-calendar-1"></i>
+                                <span>Hazırlanan Siparişler</span>
+                            </span>
+                        </a>
+                        <a href="@Url.Action("AddOrder","Marketing")" class="btn btn-info m-btn btn-lg 	m-btn m-btn--icon">
+                            <span>
+                                <i class="fa flaticon-signs-2flaticon-time-1"></i>
+                                <span>Sipariş Talebi Oluştur</span>
+                            </span>
+                        </a>
+                        <a href="@Url.Action("Customers","Marketing")" class="btn btn-brand m-btn btn-lg 	m-btn m-btn--icon">
+                            <span>
+                                <i class="fa flaticon-signs-2flaticon-time-1"></i>
+                                <span>Müşteriler</span>
+                            </span>
+                        </a>
+                        
+                        <a href="@Url.Action("Shipper","Marketing")" class="btn btn-brand m-btn btn-lg 	m-btn m-btn--icon">
+                            <span>
+                                <i class="fa flaticon-signs-2flaticon-time-1"></i>
+                                <span>Taşıyıcılar</span>
+                            </span>
+                        </a>
+                       
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!--End::Portlet-->
+</div>
+<div class="col-xl-12">
+
+    <!--begin:: Widgets/Quick Stats-->
+    <div class="row m-row--full-height">
+        <div class="col-sm-12 col-md-12 col-lg-6">
+            <div class="m-portlet m-portlet--half-height m-portlet--border-bottom-brand ">
+                <div class="m-portlet__body">
+                    <div class="m-widget26">
+                        <div class="m-widget26__number">
+                            @ViewBag.TotalOrder
+                            <small>Toplam Sipariş</small>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="m--space-30"></div>
+            <div class="m-portlet m-portlet--half-height m-portlet--border-bottom-danger ">
+                <div class="m-portlet__body">
+                    <div class="m-widget26">
+                        <div class="m-widget26__number">
+                            @ViewBag.ReadyOrder
+                            <small>Hazırlanan Sİparişler</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-6">
+            <div class="m-portlet m-portlet--half-height m-portlet--border-bottom-success ">
+                <div class="m-portlet__body">
+                    <div class="m-widget26">
+                        <div class="m-widget26__number">
+                            @ViewBag.CompletedOrder
+                            <small>Teslim Edilen Siparişler</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="m--space-30"></div>
+            <div class="m-portlet m-portlet--half-height m-portlet--border-bottom-accent ">
+                <div class="m-portlet__body">
+                    <div class="m-widget26">
+                        <div class="m-widget26__number">
+                            @ViewBag.Duyurular
+                            <small>Duyurular</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end:: Widgets/Quick Stats-->
+</div>

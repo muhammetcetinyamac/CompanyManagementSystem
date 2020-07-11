@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "ViewProduct";
+    Layout = "~/Areas/BusinessStructure/Views/Shared/_Layout.cshtml";
+}
+@{
+    var pmodel = ViewBag.GetProduct;
+}
+    <div class="col-md-12">
+        <h2>Ar-Ge</h2>
+        <!--Begin::Portlet-->
+        <div class="m-portlet m-portlet--full-height  m-portlet--unair">
+            <div class="m-portlet__head">
+                <div class="m-portlet__head-caption">
+                    <div class="m-portlet__head-title">
+                        <h3 class="m-portlet__head-text">
+                            Ürünü İncele
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="m-portlet__body">
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Kategori</th>
+                            <th>Ürün Adı</th>
+                            <th>Ürün Ölçüsü</th>
+                            <th>Açıklama</th>              
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>@pmodel.Category.CategoryName</th>
+                            <th>@pmodel.ProductName</th>
+                            <th>@pmodel.Height x @pmodel.Width</th>
+                            <th>@pmodel.Description</th> 
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+
+    

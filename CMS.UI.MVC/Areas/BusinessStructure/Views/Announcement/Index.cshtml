@@ -1,0 +1,95 @@
+﻿@model List<CMS.MODEL.Entities.Announcement>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/BusinessStructure/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="col-md-6">
+        <div class="m-portlet m-portlet--tab">
+
+            <div class="m-portlet__head">
+                <div class="m-portlet__head-caption">
+                    <div class="m-portlet__head-title">
+                        <span class="m-portlet__head-icon m--hide">
+                            <i class="la la-gear"></i>
+                        </span>
+                        <h3 class="m-portlet__head-text">
+                            Duyuru Ekle
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            @using (Html.BeginForm("Add", "Announcement", FormMethod.Post))
+            {
+                <form class="m-form m-form--fit m-form--label-align-right">
+                    <div class="m-portlet__body">
+                        <div class="form-group m-form__group">
+                            <label>Duyuru Açıklaması</label>
+                            <input type="text" class="form-control m-input" name="Content" placeholder="İçerik" requireda>
+                        </div>
+                        <div class="form-group m-form__group">
+                            <div class="m-form__actions">
+                                <button type="submit" class="btn btn-success">Ekle</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </form>               
+            }
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <!--Begin::Portlet-->
+        <div class="m-portlet m-portlet--full-height  m-portlet--unair">
+            <div class="m-portlet__head">
+                <div class="m-portlet__head-caption">
+                    <div class="m-portlet__head-title">
+                        <h3 class="m-portlet__head-text">
+                            Duyurular
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="m-portlet__body">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="m_widget2_tab1_content">
+
+                        <!--Begin::Timeline 3 -->
+                        <div class="m-timeline-3">
+                            @foreach (var item in Model)
+                            {
+                                <div class="m-timeline-3__items">
+                                    <div class="m-timeline-3__item m-timeline-3__item--info">
+                                        &nbsp;&nbsp;&nbsp;
+                                        <span class="m-timeline-3__item-time">@item.ModifiedDate.ToShortTimeString()</span>
+                                        <div class="m-timeline-3__item-desc">
+                                            <span class="m-timeline-3__item-text">
+                                                @item.ModifiedDate.ToShortDateString()
+                                            </span><br>
+                                            <span class="m-timeline-3__item-text">
+                                                @item.Content
+                                            </span><br>
+                                                   <span class="m-timeline-3__item-user-name">
+                                                       <a href="#" class="m-link m-link--metal m-timeline-3__item-link">
+                                                           @item.Employees.FirstName @item.Employees.LastName - @item.Employees.Title
+                                                       </a>
+                                                       <a href="@Url.Action("Update","Announcement" , new { Id = item.Id })" name="@item.Id" class="btn m-btn--pill m-btn--air m-btn m-btn--gradient-from-primary m-btn--gradient-to-info">Güncelle</a> <a href="@Url.Action("Delete","Announcement" , new { Id = item.Id })" name="@item.Id" class="btn m-btn--pill m-btn--air m-btn m-btn--gradient-from-danger m-btn--gradient-to-warning">Sil</a>
+                                                   </span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            }
+
+                        </div>
+
+                        <!--End::Timeline 3 -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!--End::Portlet-->
+    </div>

@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/BusinessStructure/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-12">
+
+    <!--Begin::Portlet-->
+    <div class="m-portlet m-portlet--full-height  m-portlet--unair">
+        <div class="m-portlet__head">
+            <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                    <h3 class="m-portlet__head-text">
+                        Satın Alma
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="m-portlet__body">
+            <div class="tab-content">
+                <div class="m-demo" data-code-preview="true" data-code-html="true" data-code-js="false">
+                    <div class="m-demo__preview m-demo__preview--btn">
+                        <a href="@Url.Action("AddOrder","Marketing")" class="btn btn-primary btn-lg m-btn  m-btn m-btn--icon">
+                            <span>
+                                <i class="fa flaticon-interface-6"></i>
+                                <span>Sipariş Oluştur</span>
+                            </span>
+                        </a>
+                        <a href="@Url.Action("MaterialList","ThePurchasing")" class="btn btn-brand m-btn btn-lg 	m-btn m-btn--icon">
+                            <span>
+                                <i class="fa flaticon-interface-6"></i>
+                                <span>Materyal Listesi</span>
+                            </span>
+                        </a>
+                        <a href="@Url.Action("Suppliers","ThePurchasing")" class="btn btn-primary btn-lg m-btn  m-btn m-btn--icon">
+                            <span>
+                                <i class="fa flaticon-search"></i>
+                                <span>Tedarikçiler</span>
+                            </span>
+                        </a>
+                        <a href="@Url.Action("AddSuppliers","ThePurchasing")" class="btn btn-brand m-btn btn-lg 	m-btn m-btn--icon">
+                            <span>
+                                <i class="fa flaticon-calendar-1"></i>
+                                <span>Tedarikçi Ekle</span>
+                            </span>
+                        </a>
+                       
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!--End::Portlet-->
+</div>
+

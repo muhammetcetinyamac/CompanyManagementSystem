@@ -1,0 +1,67 @@
+﻿@model List<CMS.MODEL.Entities.Suppliers>
+@{
+    ViewBag.Title = "Suppliers";
+    Layout = "~/Areas/BusinessStructure/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="col-md-12">
+        <h2>Satın Alma</h2>
+        <!--Begin::Portlet-->
+        <div class="m-portlet m-portlet--full-height  m-portlet--unair">
+            <div class="m-portlet__head">
+                <div class="m-portlet__head-caption">
+                    <div class="m-portlet__head-title">
+                        <h3 class="m-portlet__head-text">
+                            Gelen Siparişler
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="m-portlet__body">
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Şirket Adı</th>
+                            <th>Yetkili</th>
+                            <th>Ünvanı</th>
+                            <th>Adres</th>
+                            <th>Telefon</th>
+                            <th>Fax</th>
+                            <th>Web Sayfası</th>                           
+                            <th>Durumu</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <th>@item.CompanyName</th>
+                                <th>@item.ContactName</th>
+                                <th>@item.ContactTitle</th>
+                                <th>@item.Address</th>
+                                <th>@item.Phone</th>
+                                <th>@item.Fax</th>
+                                <th>@item.HomePage</th>
+                                <th>
+                                    @if (item.IsActive)
+                                    {
+                                        <span class="m-badge m-badge--info m-badge--wide">Aktif</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="m-badge m-badge--info m-badge--wide">Pasif</span>
+                                    }
+                                </th>
+                                <th><a href="@Url.Action("UpdateSuppliers","ThePurchasing" , new { Id = item.Id })" name="@item.Id" class="btn m-btn--pill m-btn--air m-btn m-btn--gradient-from-primary m-btn--gradient-to-info">Güncelle</a> <a href="@Url.Action("DeleteSuppliers","ThePurchasing" , new { Id = item.Id })" name="@item.Id" class="btn m-btn--pill m-btn--air m-btn m-btn--gradient-from-danger m-btn--gradient-to-warning">Sil</a></th>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+

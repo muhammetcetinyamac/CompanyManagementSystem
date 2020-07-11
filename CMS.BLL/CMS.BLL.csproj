@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{53D0C06D-E9CA-4684-B080-3A38C4715FBE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CMS.BLL</RootNamespace>
+    <AssemblyName>CMS.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\IAnnouncementService.cs" />
+    <Compile Include="Abstract\IBaseService.cs" />
+    <Compile Include="Abstract\ICategoryService.cs" />
+    <Compile Include="Abstract\ICustomersService.cs" />
+    <Compile Include="Abstract\IEmployeesService.cs" />
+    <Compile Include="Abstract\IJobApplicationService.cs" />
+    <Compile Include="Abstract\IMaterialService.cs" />
+    <Compile Include="Abstract\IOpinionsService.cs" />
+    <Compile Include="Abstract\IOrdersService.cs" />
+    <Compile Include="Abstract\IPetitionService.cs" />
+    <Compile Include="Abstract\IProductService.cs" />
+    <Compile Include="Abstract\IReportService.cs" />
+    <Compile Include="Abstract\IShippersService.cs" />
+    <Compile Include="Abstract\ISuppliersService.cs" />
+    <Compile Include="Abstract\ITasksService.cs" />
+    <Compile Include="Abstract\IVehicleFleetService.cs" />
+    <Compile Include="Abstract\IWarehouseService.cs" />
+    <Compile Include="Concrete\AnnouncementService.cs" />
+    <Compile Include="Concrete\CategoryService.cs" />
+    <Compile Include="Concrete\CustomersService.cs" />
+    <Compile Include="Concrete\EmployeesService.cs" />
+    <Compile Include="Concrete\JobApplicationService.cs" />
+    <Compile Include="Concrete\MaterialService.cs" />
+    <Compile Include="Concrete\OpinionsService.cs" />
+    <Compile Include="Concrete\OrdersService.cs" />
+    <Compile Include="Concrete\PetitionService.cs" />
+    <Compile Include="Concrete\ProductService.cs" />
+    <Compile Include="Concrete\ReportService.cs" />
+    <Compile Include="Concrete\ShippersService.cs" />
+    <Compile Include="Concrete\SuppliersService.cs" />
+    <Compile Include="Concrete\TasksService.cs" />
+    <Compile Include="Concrete\VehicleFleetService.cs" />
+    <Compile Include="Concrete\WarehouseService.cs" />
+    <Compile Include="loC\CMSDALModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CMS.CORE\CMS.CORE.csproj">
+      <Project>{6CCA2CA0-98FF-4F46-9A75-F80EA0611125}</Project>
+      <Name>CMS.CORE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CMS.DAL\CMS.DAL.csproj">
+      <Project>{A6375692-8422-43B4-A162-A7E89733D0DF}</Project>
+      <Name>CMS.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CMS.MODEL\CMS.MODEL.csproj">
+      <Project>{6D1AC613-9251-47D2-88D8-761DE7536C4F}</Project>
+      <Name>CMS.MODEL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

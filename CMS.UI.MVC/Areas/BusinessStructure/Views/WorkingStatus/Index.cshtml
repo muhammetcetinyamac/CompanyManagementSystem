@@ -1,0 +1,77 @@
+﻿@model CMS.MODEL.Entities.Employees
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/BusinessStructure/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-xl-12"
+        <!--begin:: Widgets/Quick Stats-->
+        <div class="row m-row--full-height">
+            <div class="col-sm-12 col-md-12 col-lg-6">
+                <div class="m-portlet m-portlet--half-height m-portlet--border-bottom-brand ">
+                    <div class="m-portlet__body">
+                        <div class="m-widget26">
+                            <div class="m-widget26__number">
+                                @Model.Department
+                                <small>Departman</small>
+                                @Model.Title
+                                <small>Başlık</small>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="m--space-30"></div>
+                <div class="m-portlet m-portlet--half-height m-portlet--border-bottom-danger ">
+                    <div class="m-portlet__body">
+                        <div class="m-widget26">
+                            <div class="m-widget26__number">
+                                @Model.Address
+                                <small>Adres</small>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-6">
+                <div class="m-portlet m-portlet--half-height m-portlet--border-bottom-success ">
+                    <div class="m-portlet__body">
+                        <div class="m-widget26">
+                            <div class="m-widget26__number">
+                                @Model.HireDate
+                                <small>İşe Giriş Tarihi</small>
+                                @{
+                                    TimeSpan kalangun = Model.HireDate - DateTime.Now;
+                                    double toplamGun = kalangun.TotalDays;
+                                    int sonuc = Convert.ToInt16(toplamGun) * -1;
+                                }
+                                @sonuc Gün
+                                <small>Toplam Süre</small>
+                            </div>
+ 
+                        </div>
+                    </div>
+                </div>
+                <div class="m--space-30"></div>
+                <div class="m-portlet m-portlet--half-height m-portlet--border-bottom-accent ">
+                    <div class="m-portlet__body">
+                        <div class="m-widget26">
+                            <div class="m-widget26__number">
+                                @Model.Price ₺
+                                <small>Aylık Maaş</small>
+                                @{int tm = (int)Model.Price * 12;}
+                                @tm ₺
+                                <small>Yıllık Kazanç</small>
+                            </div>
+                            <div class="m-widget26__chart" style="height:90px; width: 220px;">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--end:: Widgets/Quick Stats-->
+    </div>

@@ -1,0 +1,61 @@
+﻿@model List<CMS.MODEL.Entities.Customers>
+@{
+    ViewBag.Title = "Customers";
+    Layout = "~/Areas/BusinessStructure/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="col-md-12">
+        <h2>Pazarlama</h2>
+        <!--Begin::Portlet-->
+        <div class="m-portlet m-portlet--full-height  m-portlet--unair">
+            <div class="m-portlet__head">
+                <div class="m-portlet__head-caption">
+                    <div class="m-portlet__head-title">
+                        <h3 class="m-portlet__head-text">
+                            Müşteriler
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="m-portlet__body">
+                <a href="@Url.Action("AddCustomer","Marketing")" class="btn btn-info m-btn btn-lg 	m-btn m-btn--icon">
+                    <span>
+                        <i class="fa flaticon-signs-2flaticon-time-1"></i>
+                        <span>Müşteri Ekle</span>
+                    </span>
+                </a>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Şirket Adı</th>
+                            <th>Yetkili</th>
+                            <th>Yetkili Ünvanı</th>
+                            <th>Adres</th>
+                            <th>Telefon</th>
+                            <th>Mail</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <th>@item.CompanyName</th>
+                            <th>@item.ContactName</th>
+                            <th>@item.ContactTitle</th>
+                            <th>@item.Address</th>
+                            <th>@item.Phone</th>
+                            <th>@item.Mail</th>
+                            <th><a href="@Url.Action("UpdateCustomer","Marketing" , new { Id = item.Id })" name="@item.Id" class="btn m-btn--pill m-btn--air m-btn m-btn--gradient-from-primary m-btn--gradient-to-info">Güncelle</a> <a href="@Url.Action("DeleteCustomer","Marketing" , new { Id = item.Id })" name="@item.Id" class="btn m-btn--pill m-btn--air m-btn m-btn--gradient-from-danger m-btn--gradient-to-warning">Sil</a></th>
+                        </tr>
+                        }
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+
